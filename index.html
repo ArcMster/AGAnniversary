@@ -249,12 +249,35 @@
   a{color:var(--red)}
 
   /* ---------- music ---------- */
-  #yt-holder{
+  /* ---------- the two songs ---------- */
+  .tracks{display:flex; flex-direction:column; gap:.9rem; margin:2.4rem 0; max-width:26rem}
+  .track{
+    display:flex; align-items:center; gap:1rem;
+    padding:.75rem .95rem;
+    background:linear-gradient(178deg,#FFFCF6,#F8EEDF);
+    border:1px solid rgba(185,138,46,.4);
+    box-shadow:0 8px 18px rgba(43,35,27,.09);
+  }
+  .track.on{border-color:rgba(158,43,54,.5)}
+  a.tbtn{text-decoration:none}
+  .tbtn{
+    flex:0 0 auto; width:44px; height:44px; border-radius:50%; cursor:pointer;
+    border:1px solid rgba(158,43,54,.35); background:#FFF9F0; color:var(--red);
+    font-size:1rem; line-height:1; display:flex; align-items:center; justify-content:center;
+    -webkit-tap-highlight-color:transparent; transition:transform .2s ease;
+  }
+  .tbtn:active{transform:scale(.93)}
+  .tbtn:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  .tmeta{display:flex; flex-direction:column; line-height:1.25}
+  .tmeta b{font-weight:500; font-style:italic; color:var(--ink)}
+  .tmeta small{color:var(--ink-soft); font-size:.82rem; letter-spacing:.02em}
+
+  #yt-holder, #trk-holder{
     position:fixed; right:0; bottom:0; z-index:-1;
     width:200px; height:113px; overflow:hidden;
     opacity:0; visibility:hidden; pointer-events:none;
   }
-  #yt-holder iframe{display:block; width:100%; height:100%; border:0}
+  #yt-holder iframe, #trk-holder iframe{display:block; width:100%; height:100%; border:0}
   .music{
     position:fixed; right:14px; bottom:16px; z-index:70;
     width:50px; height:50px; border-radius:50%; cursor:pointer;
@@ -305,8 +328,8 @@
   <section class="chapter">
     <p class="when">11 June 2012</p>
     <h2>The tall, lean boy at the back of the class</h2>
-    <p>Already monsoon, and the sun had just started to rise past the rain. That was the day I saw a tall, lean boy who had come as a new admission into 11th standard. He joined my class. I was in Science, he was in Commerce. He was a backbencher; I was the sort of girl who sat in the first bench.</p>
-    <p>At that time I didn't pay him any attention. I never knew that the backbencher would one day become my better half.</p>
+    <p>Already monsoon, and the sun had just started to rise past the rain. That was the day I saw a tall, lean boy who had come as a new admission into 11th standard. He joined my class. I was in Science, he was in Commerce. He sat in the last bench, and I sat right beside him.</p>
+    <p>I was an all in all kind of person. A backbencher when it came to enjoying school life, and a sort of middle bencher when it came to studies. He was a shy backbencher. I never knew then that the shy boy sitting next to me would one day become my better half, or that he would ever dance with me.</p>
     <p>He was into football. I was into arts. I still remember cheering for him at the interschool competition. Back then he was just a friend, just a classmate.</p>
     <figure class="tilt-r">
       <img src="https://i.ibb.co/fYvmNGvN/Anu17.jpg" alt="An old photograph of us from long ago" loading="lazy">
@@ -353,6 +376,27 @@
     </figure>
   </section>
 
+  <section class="chapter">
+    <p class="when">and then, the dance</p>
+    <h2>The shy backbencher, dancing</h2>
+    <p>you probably don’t realise how much that little dance means to me. ❤️<br>
+    You had never really danced, but that day, you chose to dance with me.</p>
+
+    <div class="tracks" id="tracks">
+      <div class="track" id="card0">
+        <button class="tbtn" data-track="0" aria-label="Play the first song">▶</button>
+        <span class="tmeta"><b>our dance song</b><small>press play</small></span>
+      </div>
+      <div class="track" id="card1">
+        <button class="tbtn" data-track="1" aria-label="Play the second song">▶</button>
+        <span class="tmeta"><b>and this one too</b><small>press play</small></span>
+      </div>
+    </div>
+
+    <p>And somehow, those few minutes became one of my favourite little memories of us.<br>
+    Just you, me, the music… and a moment that was completely ours. ❤️</p>
+  </section>
+
   <div class="rule heart">❤</div>
 
   <section class="chapter">
@@ -387,6 +431,25 @@
     <img src="https://i.ibb.co/GvYrWxFb/Anu6.jpg" alt="The two of us" loading="lazy">
     <figcaption>us</figcaption>
   </figure>
+
+  <section class="chapter">
+    <p class="when">written on our skin</p>
+    <h2>A lion and his lioness</h2>
+    <div class="pair">
+      <figure>
+        <img src="https://i.ibb.co/xq71Pf6d/Anu20.jpg" alt="Our couple tattoo" loading="lazy">
+        <figcaption>yours</figcaption>
+      </figure>
+      <figure class="tilt-r">
+        <img src="https://i.ibb.co/qYX41QWs/Anu19.jpg" alt="Our couple tattoo" loading="lazy">
+        <figcaption>mine</figcaption>
+      </figure>
+    </div>
+    <p class="stanza">A lion for his lioness,<br>
+    a yin-yang with infinity for the two of us.<br>
+    Different in our own ways,<br>
+    but somehow always meant to be together.</p>
+  </section>
 
   <div class="rule heart">❤</div>
 
@@ -430,6 +493,17 @@
 
   <div class="rule heart">❤</div>
 
+  <section class="note">
+    <p>I’ve watched you change in so many little ways—for me, for Ishi, and for our little family.<br>
+    Not because anyone asked you to, but because you wanted to.</p>
+    <p>I see it in the things you do, the way you care, and even in the little sacrifices you never talk about.</p>
+    <p>I may not say it every time, Paapa…<br>
+    but I see it.</p>
+    <p>And I’m so proud of the man you’ve become. ❤️</p>
+  </section>
+
+  <div class="rule heart">❤</div>
+
   <section class="chapter finale">
     <h2>And still, I would choose you</h2>
     <p>Through everything we’ve been through—the happiest days, the hardest ones, the silly fights, the big fights, the tears, the laughter, pregnancy, Ishi, and all the little moments in between…</p>
@@ -469,6 +543,7 @@
 </main>
 
 <div id="yt-holder"><div id="yt-player"></div></div>
+<div id="trk-holder"><div id="trk0"></div><div id="trk1"></div></div>
 <button class="music" id="music" aria-label="Turn the music on or off">♪</button>
 
 <script>
@@ -501,19 +576,41 @@
     if(!opened && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); startMusic(); open(); }
   });
 
-  // ---------- the song ----------
-  // If anything at all goes wrong (blocked embed, no network, a browser that
-  // refuses to play sound), everything is removed quietly. Nothing is shown.
+  // ---------- YouTube, loaded once, shared ----------
+  // Nothing here ever shows an error. If playing inside the page is not
+  // possible, the song buttons quietly become links to the song instead.
+  var apiState = 0; // 0 waiting, 1 ready, 2 failed
+  var waiters = [];
+  function whenApi(fn){
+    if(apiState === 1) fn(true);
+    else if(apiState === 2) fn(false);
+    else waiters.push(fn);
+  }
+  function settle(ok){
+    if(apiState) return;
+    apiState = ok ? 1 : 2;
+    var list = waiters; waiters = [];
+    list.forEach(function(f){ try{ f(ok); }catch(err){} });
+  }
+  var canEmbed = /^https?:$/.test(location.protocol);
+
+  window.onYouTubeIframeAPIReady = function(){ settle(true); };
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  tag.onerror = function(){ settle(false); };
+  document.head.appendChild(tag);
+  setTimeout(function(){ if(!window.YT || !window.YT.Player) settle(false); }, 8000);
+
+  // ---------- the background song ----------
   var VIDEO = 'CfTWu4Llbvo';
   var holder = document.getElementById('yt-holder');
   var btn = document.getElementById('music');
-  var player = null, playing = false, wantPlay = false, gone = false;
-  var watchdog = null, apiTimer = null;
+  var player = null, playing = false, wantPlay = false, gone = false, watchdog = null;
 
   function killMusic(){
     if(gone) return;
     gone = true;
-    clearTimeout(watchdog); clearTimeout(apiTimer);
+    clearTimeout(watchdog);
     try{ if(player && player.destroy) player.destroy(); }catch(err){}
     player = null;
     if(holder && holder.parentNode) holder.parentNode.removeChild(holder);
@@ -523,32 +620,21 @@
   function paint(){
     if(gone) return;
     btn.classList.toggle('off', !playing);
-    btn.textContent = playing ? '♪' : '♪̸';
+    btn.textContent = playing ? '\u266a' : '\u266a\u0338';
     btn.setAttribute('aria-label', playing ? 'Pause the music' : 'Play the music');
   }
 
   function startMusic(){
     if(gone) return;
     if(!player || !player.playVideo){ wantPlay = true; return; }
-    try{
-      player.unMute();
-      player.setVolume(35);
-      player.playVideo();
-    }catch(err){ killMusic(); return; }
-    // if it has not actually started shortly after, drop the whole thing
+    try{ player.unMute(); player.setVolume(35); player.playVideo(); }
+    catch(err){ killMusic(); return; }
     clearTimeout(watchdog);
-    watchdog = setTimeout(function(){ if(!playing) killMusic(); }, 6000);
+    watchdog = setTimeout(function(){ if(!playing) killMusic(); }, 12000);
   }
 
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  tag.onerror = killMusic;
-  document.head.appendChild(tag);
-  apiTimer = setTimeout(function(){ if(!window.YT || !window.YT.Player) killMusic(); }, 8000);
-
-  window.onYouTubeIframeAPIReady = function(){
-    if(gone) return;
-    clearTimeout(apiTimer);
+  whenApi(function(ok){
+    if(!ok || !canEmbed) return killMusic();
     try{
       player = new YT.Player('yt-player', {
         height:'113', width:'200', videoId:VIDEO,
@@ -576,15 +662,107 @@
         }
       });
     }catch(err){ killMusic(); }
-  };
+  });
 
-  btn.addEventListener('click', function(){
-    if(gone || !player) return;
-    try{
-      if(playing){ player.pauseVideo(); playing = false; }
-      else { player.unMute(); player.playVideo(); }
-    }catch(err){ killMusic(); return; }
-    paint();
+  if(btn){
+    btn.addEventListener('click', function(){
+      if(gone || !player) return;
+      try{
+        if(playing){ player.pauseVideo(); playing = false; }
+        else { player.unMute(); player.playVideo(); }
+      }catch(err){ killMusic(); return; }
+      paint();
+    });
+  }
+
+  // ---------- the two songs from the dance ----------
+  var TRACKS = [
+    {mount:'trk0', id:'A04WawrDblo', start:0},
+    {mount:'trk1', id:'My42uq6LMDY', start:276}
+  ];
+  var tp = [null, null], tPlaying = [false, false], tDead = [false, false], tWatch = [null, null];
+
+  function card(i){ return document.getElementById('card' + i); }
+  function tbutton(i){ var c = card(i); return c ? c.querySelector('.tbtn') : null; }
+
+  function paintTrack(i){
+    var c = card(i), b = tbutton(i);
+    if(!c || !b || tDead[i]) return;
+    b.textContent = tPlaying[i] ? '\u275a\u275a' : '\u25b6';
+    c.classList.toggle('on', tPlaying[i]);
+  }
+
+  // the card never disappears: it turns into a link to the song
+  function degrade(i){
+    if(tDead[i]) return;
+    tDead[i] = true;
+    tPlaying[i] = false;
+    var c = card(i), b = tbutton(i);
+    if(!c || !b) return;
+    var t = TRACKS[i];
+    var url = 'https://youtu.be/' + t.id + (t.start ? '?t=' + t.start : '');
+    var a = document.createElement('a');
+    a.className = 'tbtn';
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = '\u25b6';
+    a.setAttribute('aria-label', 'Open the song');
+    b.parentNode.replaceChild(a, b);
+    c.classList.remove('on');
+    c.classList.add('link');
+    var small = c.querySelector('.tmeta small');
+    if(small) small.textContent = 'listen';
+  }
+
+  whenApi(function(ok){
+    if(!ok || !canEmbed){ degrade(0); degrade(1); return; }
+    TRACKS.forEach(function(t, i){
+      try{
+        tp[i] = new YT.Player(t.mount, {
+          height:'113', width:'200', videoId:t.id,
+          playerVars:{autoplay:0, controls:0, playsinline:1, rel:0, start:t.start},
+          events:{
+            onReady:function(){ try{ tp[i].setVolume(70); }catch(err){} },
+            onStateChange:function(e){
+              if(e.data === YT.PlayerState.PLAYING){
+                tPlaying[i] = true;
+                clearTimeout(tWatch[i]);
+              } else if(e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED){
+                tPlaying[i] = false;
+              }
+              paintTrack(i);
+            },
+            onError:function(){ degrade(i); }
+          }
+        });
+      }catch(err){ degrade(i); }
+    });
+  });
+
+  [0, 1].forEach(function(i){
+    var c = card(i);
+    if(!c) return;
+    c.addEventListener('click', function(e){
+      if(tDead[i]) return;              // it is a plain link now
+      if(!e.target.classList.contains('tbtn')) return;
+      e.preventDefault();
+      if(!tp[i] || !tp[i].playVideo){ degrade(i); return; }
+      var other = i === 0 ? 1 : 0;
+      try{
+        if(tPlaying[i]){
+          tp[i].pauseVideo();
+        } else {
+          if(tp[other] && tPlaying[other]) tp[other].pauseVideo();
+          if(player && playing){ player.pauseVideo(); playing = false; paint(); }
+          tp[i].unMute();
+          tp[i].setVolume(70);
+          tp[i].playVideo();
+          clearTimeout(tWatch[i]);
+          tWatch[i] = setTimeout(function(){ if(!tPlaying[i]) degrade(i); }, 12000);
+        }
+      }catch(err){ degrade(i); }
+    });
   });
 
   // the thread of the story fills as you read
